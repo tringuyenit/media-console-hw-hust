@@ -39,7 +39,7 @@ public class Order {
         return total;
     }
 
-    public void showDVDs() {
+    public void listDVDs() {
         System.out.println(this.qty_ordered);
         for (int i = 0; i < this.qty_ordered; i++) {
             System.out.println(i + " " + this.item_ordered[i].getTitle());
