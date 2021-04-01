@@ -1,4 +1,4 @@
-package Lab04;
+package Lab05;
 
 public class DVD {
     private String title;

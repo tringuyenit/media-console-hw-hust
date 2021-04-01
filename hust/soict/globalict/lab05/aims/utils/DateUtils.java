@@ -1,4 +1,4 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims.utils;
 
 import java.util.Arrays;
 import java.util.Comparator;

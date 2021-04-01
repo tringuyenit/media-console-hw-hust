@@ -1,4 +1,4 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims.disc;
 
 public class DVD {
     private String title;
@@ -81,7 +81,7 @@ public class DVD {
         this.cost = cost;
     }
 
-    boolean search(String title){
+    public boolean search(String title){
         return this.title.contains(title);
     }
 

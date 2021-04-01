@@ -1,9 +1,38 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims;
+
+import hust.soict.globalict.lab05.aims.disc.DVD;
+import hust.soict.globalict.lab05.aims.order.Order;
 
 import java.text.DecimalFormat;
 
-public class Aims {
-    public static void main(String[] args) {
+public class DiskTest {
+    public void test1() {
+        final DecimalFormat format = new DecimalFormat("0.00");
+
+        System.out.println();
+
+        // initializing some DVDs with different constructors
+        DVD dvd1 = new DVD("The Lion King", "Animation",
+                "Roger Allers", 87, 19.95f);
+        DVD dvd2 = new DVD("Star Wars", "Science Fiction",
+                "George", 87, 24.95f);
+        DVD dvd3 = new DVD("Animation", "Aladin",
+                18.99f);
+
+        Order anOrder = Order.makeOrder();
+        DVD[] list = {dvd1, dvd2, dvd3};
+        // Adding DVD using addDVD(DVD [] dvdList)
+        anOrder.addDVD(list);
+        System.out.println("Lucky Free Item :\n" + anOrder.getALuckyItem().displayInfo());
+
+        if (dvd1.search("e Li")){
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+
+    public void test2(){
         final DecimalFormat format = new DecimalFormat("0.00");
 
         System.out.println();
@@ -70,6 +99,5 @@ public class Aims {
 //
 //        tool.dateSort(arr);
 //        tool.print(arr);
-
     }
 }

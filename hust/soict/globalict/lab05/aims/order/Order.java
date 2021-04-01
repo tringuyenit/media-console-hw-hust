@@ -1,4 +1,7 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims.order;
+
+import hust.soict.globalict.lab05.aims.utils.MyDate;
+import hust.soict.globalict.lab05.aims.disc.DVD;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;

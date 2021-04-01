@@ -1,4 +1,4 @@
-package Lab04;
+package Lab05;
 
 import java.util.Arrays;
 import java.util.Comparator;

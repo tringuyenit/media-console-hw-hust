@@ -1,4 +1,6 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims.disc;
+
+import hust.soict.globalict.lab05.aims.disc.DVD;
 
 public class TestPassingParameter {
     public static void main(String[] args) {

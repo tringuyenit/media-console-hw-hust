@@ -1,4 +1,4 @@
-package Lab05;
+package hust.soict.globalict.lab05.aims.utils;
 
 import java.text.*;
 import java.util.Calendar;
