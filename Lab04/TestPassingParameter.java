@@ -1,4 +1,4 @@
-package Lab03;
+package Lab04;
 
 public class TestPassingParameter {
     public static void main(String[] args) {

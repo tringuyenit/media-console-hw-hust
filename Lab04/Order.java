@@ -1,4 +1,4 @@
-package Lab03;
+package Lab04;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
