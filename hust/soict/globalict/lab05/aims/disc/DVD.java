@@ -1,4 +1,4 @@
-package hust.soict.globalict.lab05.aims.disc;
+package hust.soict.globalict.lab06.aims.disc;
 
 public class DVD {
     private String title;

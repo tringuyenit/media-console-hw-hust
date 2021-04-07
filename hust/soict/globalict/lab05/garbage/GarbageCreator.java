@@ -1,4 +1,4 @@
-package hust.soict.globalict.lab05.garbage;
+package hust.soict.globalict.lab06.garbage;
 
 public class GarbageCreator {
 }

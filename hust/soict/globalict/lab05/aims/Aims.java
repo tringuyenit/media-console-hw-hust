@@ -1,6 +1,6 @@
-package hust.soict.globalict.lab05.aims;
+package hust.soict.globalict.lab06.aims;
 
-import hust.soict.globalict.lab05.aims.disc.DVD;
+import hust.soict.globalict.lab06.aims.disc.DVD;
 
 import java.text.DecimalFormat;
 
