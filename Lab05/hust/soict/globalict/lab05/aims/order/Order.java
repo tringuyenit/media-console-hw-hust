@@ -22,7 +22,7 @@ public class Order {
     private Order(){
         LocalDate current_date = java.time.LocalDate.now();
         this.dateOrdered = new MyDate(String.valueOf(current_date.getDayOfMonth()),
-                                        String.valueOf(current_date.getDayOfMonth()),
+                                        String.valueOf(current_date.getMonth()),
                                         String.valueOf(current_date.getYear()));;
     } // make constructor private instead of public
 
