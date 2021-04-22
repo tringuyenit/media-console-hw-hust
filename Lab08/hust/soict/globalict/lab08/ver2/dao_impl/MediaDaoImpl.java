@@ -33,6 +33,8 @@ public class MediaDaoImpl implements MediaDao {
     @Override
     public List<Media> displayResourceByType(Class C) {
         List<Media> itemsByType = new ArrayList<Media>();
+
+
         System.out.println("(Type)\t<Id>\t\t\t\t\t\t\t<Details>");
         int i = 1;
         for(Media m : findAll()){
@@ -42,14 +44,19 @@ public class MediaDaoImpl implements MediaDao {
                 i++;
             }
         }
+
+        itemsByType.sort(Media.FULL_COMPARE_1);
         return itemsByType;
     } // allow user to choose what to add (Book, CD, DVD ? )
 
     @Override
     public void displayResource(){
+        List<Media> get_resource = findAll();
+        get_resource.sort(Media.FULL_COMPARE_1);
+
         System.out.println("(Type)\t<Id>\t\t\t\t\t\t\t<Details>");
         int i = 1;
-        for(Media m : findAll()){
+        for(Media m : get_resource){
             System.out.println("("+displayType(m)+")\t<"+i+">   "+ m.displayInfo());
             i++;
         }

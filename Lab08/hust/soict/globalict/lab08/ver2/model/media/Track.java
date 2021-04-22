@@ -32,7 +32,12 @@ public class Track implements Playable{
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return (this.title.equals(((Track) obj).title)) && (this.length == ((Track) obj).length);
+    public boolean equals(Object o) {
+        if(o instanceof Track){
+            Track tmp = (Track) o;
+            return (this.getTitle().equals(tmp.getTitle())
+                && this.getLength() == tmp.getLength());
+        }
+        return false;
     }// this improves the setupCD() method of AdminService
 }

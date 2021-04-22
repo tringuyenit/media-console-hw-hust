@@ -31,6 +31,18 @@ public class Disc extends Media implements Playable{
     }
 
     @Override
+    public String toString() {
+
+        return "Disc{" + "\n" +
+                "title='" + this.getTitle() + '\'' + "\n" +
+                "category='" + this.getCategory() + '\'' + "\n" +
+                "cost=" + this.getCost() + "\n" +
+                "director='" + this.getDirector() + '\'' + "\n" +
+                "length=" + this.getLength() + "\n" +
+                '}';
+    }
+
+    @Override
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());

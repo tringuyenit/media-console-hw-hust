@@ -10,11 +10,18 @@ import hust.soict.globalict.lab08.ver2.service.MediaService;
 import hust.soict.globalict.lab08.ver2.service.OrderService;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class OrderServiceImpl implements OrderService {
+    private final Scanner sc = new Scanner(System.in);
 
     private final OrderDao orderDao = new OrderDaoImpl();
     private final MediaService mediaService = new MediaServiceImpl();
+
+    private void errorChoice(){
+        System.out.println("--------------------------------");
+        System.out.println("Please choose another number");
+    }
 
     @Override
     public List<Order> findAll() {

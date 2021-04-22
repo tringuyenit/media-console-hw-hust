@@ -1,4 +1,4 @@
-package hust.soict.globalict.lab07.ver2.model.media;
+package hust.soict.globalict.lab08.ver2.model.media;
 
 public class DVD extends Disc{
     // no need to implement Playable interface because I make

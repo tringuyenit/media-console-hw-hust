@@ -116,6 +116,8 @@ public class AdminServiceImpl implements AdminService {
 
                 if (!authors.contains(tmp)){
                     authors.add(tmp);
+                } else {
+                    System.out.println("*That author already exists (will be filtered out)*");
                 }
 
             }
@@ -286,6 +288,7 @@ public class AdminServiceImpl implements AdminService {
             }
             for (Track t : tracks){
                 if(t.equals(track)){
+                    System.out.println("*That track already exists (will be filtered out)*");
                     continue outerloop;
                 }
             }

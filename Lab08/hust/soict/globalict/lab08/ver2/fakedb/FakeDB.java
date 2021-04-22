@@ -35,7 +35,7 @@ public class FakeDB {
         cd2.addTrack(new Track("track1", 314));
         CD cd3 = new CD("Chung ta cua hien tai", "Mafia", 999, "Le Huy Anh", "Nguyen Thanh Tung");
         cd3.addTrack(new Track("track1", 200)).addTrack(new Track("track1", 450)).addTrack(new Track("track1", 240));
-        CD cd4 = new CD("Doa Hoa Hong", "null:D", -1, "Boxamxit", "Chi Pu");
+        CD cd4 = new CD("Doa Hoa Hong", "null :D", 1, "Boxamxit", "Chi Pu");
         cd4.addTrack(new Track("track1", 272));
 
         FakeDB.resource.add(dvd1);
@@ -51,7 +51,7 @@ public class FakeDB {
         FakeDB.resource.add(cd3);
         FakeDB.resource.add(cd4);
 
-        resource.sort(Media.CompareMediaType); // sort item by Type
+        resource.sort(Media.FULL_COMPARE_1); // sort item by Type
     }
 
     public static ArrayList<Order> getOrders() {
@@ -78,7 +78,7 @@ public class FakeDB {
         } else {
             resource.add((CD) O);
         }
-        resource.sort(Media.CompareMediaType); // sort item by Type after adding into resource
+        resource.sort(Media.FULL_COMPARE_1); // sort item by Type after adding into resource
     }//this method is for Admin only
 
     public static void deleteFromDB(Object O){
@@ -93,5 +93,6 @@ public class FakeDB {
         } else {
             resource.remove((CD) O);
         }
+        resource.sort(Media.FULL_COMPARE_1); // sort item by Type after delete from resource
     }//this method is for Admin only
 }

@@ -75,10 +75,17 @@ public class Order {
     //---------------------------------------------------------
     // code that are required in lab05 assignment
     public boolean addMedia(Media media){
+
+        if(this.contain(media)){
+            System.out.println("This item already in cart");
+            return false;
+        }
+
         if(this.itemsOrdered.size() == MAX_NUMBER_ORDER){
             System.out.println(media.displayInfo() + " - cannot be added to cart because FULL");
             return false;
         }
+
         this.itemsOrdered.add(media);
         return true;
     }
@@ -115,6 +122,31 @@ public class Order {
         }
 
         System.out.println("Total cost is : " + format.format(this.totalCost()) + " $");
+    }
+
+
+
+
+    //----------------------------------------------------------
+    // made this method for lab08,
+    // for checking if an item is already exist in cart(order) or not
+    public boolean contain(Media m){
+        for (Media media : this.itemsOrdered){
+            if (m.equals(media)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+    // sorting options
+    public void sortItemByByTitleCateCost(){
+        this.itemsOrdered.sort(Media.FULL_COMPARE_1);
+    }
+    public void sortItemByByCostTitleCate(){
+        this.itemsOrdered.sort(Media.FULL_COMPARE_2);
     }
 
 }

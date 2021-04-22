@@ -28,7 +28,7 @@ public class OrderController {
 
 
         System.out.println("1. Add item by id");
-        System.out.println("2. Display available items");
+        System.out.println("2. Show available items");
         System.out.println("3. Show available items with specific type");
         System.out.println("0. Main menu");
         System.out.println("--------------------------------");
@@ -63,8 +63,8 @@ public class OrderController {
 
         System.out.println("1. Add item by id");
         System.out.println("2. Delete item by id");
-        System.out.println("3. Display items in this order");
-        System.out.println("4. Display available items");
+        System.out.println("3. View items in this order");
+        System.out.println("4. Show available items");
         System.out.println("5. Show available items with specific type");
         System.out.println("0. Main menu");
         System.out.println("--------------------------------");
@@ -91,8 +91,8 @@ public class OrderController {
 
         System.out.println("1. Add item by id");
         System.out.println("2. Delete item by id");
-        System.out.println("3. Display items in this order");
-        System.out.println("4. Display available items");
+        System.out.println("3. View items in this order");
+        System.out.println("4. Show available items");
         System.out.println("5. Show available items with specific type");
         System.out.println("6. Play sample");
         System.out.println("0. Main menu");
@@ -148,11 +148,12 @@ public class OrderController {
                     chooseMenuToShow(X);
                 }
                 break;
-            case 3: //3. Display items in this order
+            case 3: //3. View items in this order
+                handleSortOption(X);
                 X.listItemInOrder();
                 chooseMenuToShow(X);
                 break;
-            case 4: //4. Display available items
+            case 4: //4. Show available items
                 mediaService.displayResource();
                 chooseMenuToShow(X);
                 break;
@@ -228,8 +229,9 @@ public class OrderController {
                     return;
                 }
 
-                O.addMedia(listByType.get(choice_2-1));
-                System.out.println("Item has been added");
+                if (O.addMedia(listByType.get(choice_2-1))){
+                    System.out.println("Item has been added");
+                }
                 handleShowByType(O);
 
             } catch (Exception e){
@@ -270,6 +272,39 @@ public class OrderController {
             errorChoice();
             System.out.println("--------------------------------");
             handleItemPlayable(O);
+        }
+    }
+    public void handleSortOption(Order O) {
+        System.out.println("--------------------------------");
+        System.out.println("1. Sort by Type->Title->Category->Cost");
+        System.out.println("2. Sort by Type->Cost->Title->Category");
+        System.out.println("0. Back");
+
+        try {
+            System.out.print("Your choice : ");
+            int choice = Integer.parseInt(sc.nextLine());
+            if (choice > 2 || choice < 0){
+                errorChoice();
+                handleSortOption(O);
+                return;
+            }
+
+            System.out.println("");
+
+            switch (choice){
+                case 1: //1. Sort by Type->Title->Category->Cost
+                    O.sortItemByByTitleCateCost();
+                    break;
+                case 2: //Sort by Type->Cost->Title->Category
+                    O.sortItemByByCostTitleCate();
+                    break;
+                case 0:
+                    break;
+            }
+
+        } catch (Exception e){
+            errorChoice();
+            handleSortOption(O);
         }
     }
 
